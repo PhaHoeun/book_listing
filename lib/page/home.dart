@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      routes: const  [
+      routes: const [
         BookRouter(),
         FavoriteRouter(),
         ProfileRouter(),
@@ -19,15 +19,15 @@ class HomePage extends StatelessWidget {
           onTap: tabsRouter.setActiveIndex,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.book),
+              icon: Icon(Icons.book_online),
               label: 'Books',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.account_box),
+              icon: Icon(Icons.favorite_outline),
               label: 'Favorite',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.account_box),
+              icon: Icon(Icons.person_outline),
               label: 'Profile',
             ),
           ],
