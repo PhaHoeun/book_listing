@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:book_listing/page/book.dart';
 import 'package:book_listing/page/favorite.dart';
 import 'package:book_listing/page/home.dart';
 import 'package:book_listing/page/most_reading.dart';
@@ -16,11 +17,11 @@ import 'package:book_listing/page/profile.dart';
         AutoRoute(
           path: "books",
           name: "BookRouter",
-          page: EmptyRouterPage,
+          page: BookPage,
           children: [
             AutoRoute(page: PopularPage, path: 'popular'),
             AutoRoute(page: MostReading, path: 'most-reading'),
-            RedirectRoute(path: '*', redirectTo: ''),
+            
 
           ]
           
