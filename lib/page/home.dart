@@ -1,4 +1,5 @@
-import 'package:book_listing/page/book.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:book_listing/configure/routes.gr.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,58 +7,32 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const Center(
-        child: Text("Home Page"),
-      ),
-      bottomNavigationBar: Container(
-        height: 70,
-        width: double.infinity,
-        color: Colors.grey[200],
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const BookPage()));
-              },
-              child: Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(Icons.book_online),
-                    Text("Book"),
-                  ],
-                ),
-              ),
+    return AutoTabsScaffold(
+      routes: const  [
+        BookRouter(),
+        FavoriteRouter(),
+        ProfileRouter(),
+      ],
+      bottomNavigationBuilder: (_, tabsRouter) {
+        return BottomNavigationBar(
+          currentIndex: tabsRouter.activeIndex,
+          onTap: tabsRouter.setActiveIndex,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.book),
+              label: 'Books',
             ),
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.favorite_outline),
-                  Text("Favorite"),
-                ],
-              ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_box),
+              label: 'Favorite',
             ),
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.person_outline),
-                  Text("Profile"),
-                ],
-              ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_box),
+              label: 'Profile',
             ),
-            // TextButton(onPressed: () {}, child: const Text("Book")),
-            // TextButton(onPressed: () {}, child: const Text("Favorite")),
-            // TextButton(onPressed: () {}, child: const Text("Profile")),
           ],
-        ),
-      ),
+        );
+      },
     );
   }
 }

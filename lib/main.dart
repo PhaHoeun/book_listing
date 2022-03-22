@@ -1,5 +1,4 @@
 import 'package:book_listing/configure/routes.gr.dart';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,8 +7,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  final appRouter = AppRouter();
 
+  AppRouter appRouter = AppRouter();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -19,8 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routeInformationParser: appRouter.defaultRouteParser(),
       routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
 }

@@ -28,15 +28,15 @@ class AppRouter extends _i5.RootStackRouter {
       return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.HomePage());
     },
-    BookRoute.name: (routeData) {
+    BookRouter.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i2.BookPage());
     },
-    FavoriteRoute.name: (routeData) {
+    FavoriteRouter.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i3.FavoritePage());
     },
-    ProfileRoute.name: (routeData) {
+    ProfileRouter.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i4.ProfilePage());
     }
@@ -44,41 +44,46 @@ class AppRouter extends _i5.RootStackRouter {
 
   @override
   List<_i5.RouteConfig> get routes => [
-        _i5.RouteConfig(HomeRoute.name, path: '/'),
-        _i5.RouteConfig(BookRoute.name, path: '/book-page'),
-        _i5.RouteConfig(FavoriteRoute.name, path: '/favorite-page'),
-        _i5.RouteConfig(ProfileRoute.name, path: '/profile-page')
+        _i5.RouteConfig(HomeRoute.name, path: '/', children: [
+          _i5.RouteConfig(BookRouter.name,
+              path: 'books', parent: HomeRoute.name),
+          _i5.RouteConfig(FavoriteRouter.name,
+              path: 'favorite', parent: HomeRoute.name),
+          _i5.RouteConfig(ProfileRouter.name,
+              path: 'profile', parent: HomeRoute.name)
+        ])
       ];
 }
 
 /// generated route for
 /// [_i1.HomePage]
 class HomeRoute extends _i5.PageRouteInfo<void> {
-  const HomeRoute() : super(HomeRoute.name, path: '/');
+  const HomeRoute({List<_i5.PageRouteInfo>? children})
+      : super(HomeRoute.name, path: '/', initialChildren: children);
 
   static const String name = 'HomeRoute';
 }
 
 /// generated route for
 /// [_i2.BookPage]
-class BookRoute extends _i5.PageRouteInfo<void> {
-  const BookRoute() : super(BookRoute.name, path: '/book-page');
+class BookRouter extends _i5.PageRouteInfo<void> {
+  const BookRouter() : super(BookRouter.name, path: 'books');
 
-  static const String name = 'BookRoute';
+  static const String name = 'BookRouter';
 }
 
 /// generated route for
 /// [_i3.FavoritePage]
-class FavoriteRoute extends _i5.PageRouteInfo<void> {
-  const FavoriteRoute() : super(FavoriteRoute.name, path: '/favorite-page');
+class FavoriteRouter extends _i5.PageRouteInfo<void> {
+  const FavoriteRouter() : super(FavoriteRouter.name, path: 'favorite');
 
-  static const String name = 'FavoriteRoute';
+  static const String name = 'FavoriteRouter';
 }
 
 /// generated route for
 /// [_i4.ProfilePage]
-class ProfileRoute extends _i5.PageRouteInfo<void> {
-  const ProfileRoute() : super(ProfileRoute.name, path: '/profile-page');
+class ProfileRouter extends _i5.PageRouteInfo<void> {
+  const ProfileRouter() : super(ProfileRouter.name, path: 'profile');
 
-  static const String name = 'ProfileRoute';
+  static const String name = 'ProfileRouter';
 }
