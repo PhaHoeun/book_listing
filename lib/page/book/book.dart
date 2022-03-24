@@ -14,20 +14,28 @@ class BookPage extends StatelessWidget {
       body: Row(
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 50, left: 15),
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.indigo[900],
+                    padding: const EdgeInsets.only(left: 35, right: 35),
+                  ),
                   onPressed: () {
                     // context.pushRoute(const PopularRoute());
                     context.router.pushNamed('popular');
                   },
-                  child: const Text("Popular"),
+                  child: const Center(child: Text("Popular")),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20, left: 15),
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.indigo[900],
+                  ),
                   onPressed: () {
                     context.router.pushNamed('most-reading');
                   },

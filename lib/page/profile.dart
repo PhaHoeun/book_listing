@@ -5,10 +5,38 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title:const  Text("Profile Page")),
-      body: const Center(
-        child: Text("Profile Page"),
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Profile Page"),
+          // bottom: const TabBar(
+          //   tabs: [
+          //     Tab(text: ("Numbers")),
+          //     Tab(text: ("Relationship")),
+          //     Tab(text: ("Word")),
+          //     Tab(text: ("Sentence"))
+          //   ],
+          // ),
+        ),
+        body: Center(
+          child: Text(
+            "Profile Page",
+            style: TextStyle(
+              color: Colors.indigo[900],
+              fontWeight: FontWeight.w700,
+              fontSize: 18,
+            ),
+          ),
+        ),
+        // const TabBarView(
+        //   children: [
+        //     Text("Number"),
+        //     Text("Relationship"),
+        //     Text("Word"),
+        //     Text("Sentence"),
+        //   ],
+        // )
       ),
     );
   }

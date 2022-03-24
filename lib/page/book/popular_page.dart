@@ -18,8 +18,15 @@ class PopularPage extends StatelessWidget {
           width: 200,
           height: 70,
           color: Colors.grey[200],
-          child: const Center(
-            child: Text("Book One"),
+          child: Center(
+            child: Text(
+              "Book One",
+              style: TextStyle(
+                color: Colors.indigo[900],
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
+              ),
+            ),
           ),
         ),
         Container(
@@ -27,8 +34,15 @@ class PopularPage extends StatelessWidget {
           width: 200,
           height: 70,
           color: Colors.grey[200],
-          child: const Center(
-            child: Text("Book Two"),
+          child: Center(
+            child: Text(
+              "Book Two",
+              style: TextStyle(
+                color: Colors.indigo[900],
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
+              ),
+            ),
           ),
         ),
         Container(
@@ -36,8 +50,15 @@ class PopularPage extends StatelessWidget {
           width: 200,
           height: 70,
           color: Colors.grey[200],
-          child: const Center(
-            child: Text("Book Three"),
+          child: Center(
+            child: Text(
+              "Book Three",
+              style: TextStyle(
+                color: Colors.indigo[900],
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
+              ),
+            ),
           ),
         ),
         Container(
@@ -45,8 +66,15 @@ class PopularPage extends StatelessWidget {
           width: 200,
           height: 70,
           color: Colors.grey[200],
-          child: const Center(
-            child: Text("Book Four"),
+          child: Center(
+            child: Text(
+              "Book Four",
+              style: TextStyle(
+                color: Colors.indigo[900],
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
+              ),
+            ),
           ),
         ),
         Container(
@@ -54,8 +82,15 @@ class PopularPage extends StatelessWidget {
           width: 200,
           height: 70,
           color: Colors.grey[200],
-          child: const Center(
-            child: Text("Book Five"),
+          child: Center(
+            child: Text(
+              "Book Five",
+              style: TextStyle(
+                color: Colors.indigo[900],
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
+              ),
+            ),
           ),
         ),
         Container(
@@ -63,8 +98,15 @@ class PopularPage extends StatelessWidget {
           width: 200,
           height: 70,
           color: Colors.grey[200],
-          child: const Center(
-            child: Text("Book Six"),
+          child: Center(
+            child: Text(
+              "Book Six",
+              style: TextStyle(
+                color: Colors.indigo[900],
+                fontWeight: FontWeight.w700,
+                fontSize: 18,
+              ),
+            ),
           ),
         ),
       ],
