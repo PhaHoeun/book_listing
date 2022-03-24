@@ -29,9 +29,7 @@ import 'package:book_listing/page/profile.dart';
               path: 'most-reading',
               name: 'MostReadingRouter',
               transitionsBuilder: TransitionsBuilders.noTransition,
-              children: [
-                CustomRoute(page: MostReading, path: '', name: 'AuthorRouter'),
-              ],
+              
             ),
           ],
         ),
@@ -40,7 +38,7 @@ import 'package:book_listing/page/profile.dart';
           name: "FavoriteRouter",
           page: FavoritePage,
         ),
-        // our ProfileRouter has been moved into the children field
+        
         AutoRoute(
           path: "profile",
           name: "ProfileRouter",

@@ -61,17 +61,6 @@ class AppRouter extends _i7.RootStackRouter {
           transitionsBuilder: _i7.TransitionsBuilders.noTransition,
           opaque: true,
           barrierDismissible: false);
-    },
-    AuthorRouter.name: (routeData) {
-      final queryParams = routeData.queryParams;
-      final args = routeData.argsAs<AuthorRouterArgs>(
-          orElse: () =>
-              AuthorRouterArgs(author: queryParams.optString('author')));
-      return _i7.CustomPage<dynamic>(
-          routeData: routeData,
-          child: _i6.MostReading(key: args.key, author: args.author),
-          opaque: true,
-          barrierDismissible: false);
     }
   };
 
@@ -90,12 +79,7 @@ class AppRouter extends _i7.RootStackRouter {
                 _i7.RouteConfig(PopularRouter.name,
                     path: 'popular', parent: BookRouter.name),
                 _i7.RouteConfig(MostReadingRouter.name,
-                    path: 'most-reading',
-                    parent: BookRouter.name,
-                    children: [
-                      _i7.RouteConfig(AuthorRouter.name,
-                          path: '', parent: MostReadingRouter.name)
-                    ])
+                    path: 'most-reading', parent: BookRouter.name)
               ]),
           _i7.RouteConfig(FavoriteRouter.name,
               path: 'favorite', parent: HomeRoute.name),
@@ -150,13 +134,11 @@ class PopularRouter extends _i7.PageRouteInfo<void> {
 /// generated route for
 /// [_i6.MostReading]
 class MostReadingRouter extends _i7.PageRouteInfo<MostReadingRouterArgs> {
-  MostReadingRouter(
-      {_i8.Key? key, String? author, List<_i7.PageRouteInfo>? children})
+  MostReadingRouter({_i8.Key? key, String? author})
       : super(MostReadingRouter.name,
             path: 'most-reading',
             args: MostReadingRouterArgs(key: key, author: author),
-            rawQueryParams: {'author': author},
-            initialChildren: children);
+            rawQueryParams: {'author': author});
 
   static const String name = 'MostReadingRouter';
 }
@@ -171,30 +153,5 @@ class MostReadingRouterArgs {
   @override
   String toString() {
     return 'MostReadingRouterArgs{key: $key, author: $author}';
-  }
-}
-
-/// generated route for
-/// [_i6.MostReading]
-class AuthorRouter extends _i7.PageRouteInfo<AuthorRouterArgs> {
-  AuthorRouter({_i8.Key? key, String? author})
-      : super(AuthorRouter.name,
-            path: '',
-            args: AuthorRouterArgs(key: key, author: author),
-            rawQueryParams: {'author': author});
-
-  static const String name = 'AuthorRouter';
-}
-
-class AuthorRouterArgs {
-  const AuthorRouterArgs({this.key, this.author});
-
-  final _i8.Key? key;
-
-  final String? author;
-
-  @override
-  String toString() {
-    return 'AuthorRouterArgs{key: $key, author: $author}';
   }
 }
