@@ -21,7 +21,7 @@ class MostReading extends StatelessWidget {
                 width: 200,
                 height: 70,
                 color: Colors.grey[200],
-                child: const  Center(
+                child: const Center(
                   child: Text("Book A, Author: jonh"),
                 ),
               ),
@@ -85,7 +85,7 @@ class MostReading extends StatelessWidget {
                 width: 200,
                 height: 70,
                 color: Colors.grey[200],
-                child:  Center(
+                child: Center(
                   child: Text("Book A, Author: $author"),
                 ),
               ),
@@ -94,7 +94,7 @@ class MostReading extends StatelessWidget {
                 width: 200,
                 height: 70,
                 color: Colors.grey[200],
-                child:  Center(
+                child: Center(
                   child: Text("Book D, Author: $author"),
                 ),
               ),
@@ -103,7 +103,7 @@ class MostReading extends StatelessWidget {
                 width: 200,
                 height: 70,
                 color: Colors.grey[200],
-                child:  Center(
+                child: Center(
                   child: Text("Book F, Author: $author"),
                 ),
               ),

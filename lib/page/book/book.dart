@@ -1,6 +1,7 @@
 // import 'package:book_listing/configure/routes.gr.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BookPage extends StatelessWidget {
   const BookPage({Key? key}) : super(key: key);
@@ -9,7 +10,10 @@ class BookPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Book Page"),
+        title: Text(
+          "Book Page",
+          style: GoogleFonts.getFont('Macondo'),
+        ),
       ),
       body: Row(
         children: [

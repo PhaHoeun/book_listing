@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -9,7 +11,10 @@ class ProfilePage extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Profile Page"),
+          title: Text(
+            "Profile Page",
+            style: GoogleFonts.getFont('Macondo'),
+          ),
           // bottom: const TabBar(
           //   tabs: [
           //     Tab(text: ("Numbers")),
